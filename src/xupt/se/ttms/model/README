@@ -1,0 +1,11 @@
+model 主要定义了一些对象的属性，以及这些属性的set，get方法
+
+文件：
+Customer 顾客类
+Employee 员工类
+Order    订单
+Sale
+Studio   演出厅
+Ticket   票
+User     用户
+UserRight

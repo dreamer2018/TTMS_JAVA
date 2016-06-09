@@ -11,28 +11,31 @@ import java.util.Properties;
 public class DBUtil {
 	private final String dbConnFile = "resource/database/jdbc.properties";
 	private Connection conn=null;
-	private String dbDriver;	//瀹涔椹卞  
-    private String dbURL;		//瀹涔URL  
-    private String userName;	//瀹涔ㄦ峰  
-    private String password;	//瀹涔瀵	
-    
-    //浠缃浠跺版炬  
-    private void loadConnProperties(){  
+	private String dbDriver;
+    private String dbURL;
+    private String userName;
+    private String password;
+
+
+    private void loadConnProperties(){
         Properties props = new Properties();  
         try {  
-            props.load(new FileInputStream(dbConnFile));//规缃浠惰矾寰Conf杞介缃浠  
+            props.load(new FileInputStream(dbConnFile));
         } catch (FileNotFoundException e) {  
             e.printStackTrace();  
         } catch (IOException e) {  
             e.printStackTrace();  
         }  
-        this.dbDriver = props.getProperty("driver");//浠缃浠朵腑寰稿板苟璁剧疆绫诲  
+        this.dbDriver = props.getProperty("driver");
         this.dbURL = props.getProperty("url");  
         this.userName = props.getProperty("username");  
         this.password = props.getProperty("password");  
      
     }
-    
+
+    /*
+    数据库连接函数
+     */
 	public boolean openConnection(){
 		try {  
 			loadConnProperties();
@@ -59,7 +62,9 @@ public class DBUtil {
 		
      }
 	
-	// ヨ骞跺扮
+    /*
+        SQL查询函数
+     */
 	public ResultSet execQuery(String sql) throws Exception {
 		ResultSet rstSet = null;
 		try {
@@ -73,7 +78,9 @@ public class DBUtil {
 		return rstSet;
 	}
 
-	// ヤ℃扮邯褰锛骞惰璇
+    /*
+        执行sql语句函数
+     */
 	public ResultSet getInsertObjectIDs(String insertSql) throws Exception{
 		ResultSet rst = null;
 		try {
@@ -91,7 +98,9 @@ public class DBUtil {
 		return rst;
 	}
 
-	// ャ存般
+    /*
+    执行sql语句
+     */
 	public int execCommand(String sql) throws Exception{
 		int flag = 0;
 		try {
@@ -108,7 +117,9 @@ public class DBUtil {
 		return flag;
 	}
 
-	// 捐婧
+    /*
+    关闭数据库连接
+     */
 	public void close(ResultSet rst) throws Exception {
 		try {
 			Statement stmt = rst.getStatement();
@@ -118,9 +129,11 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 	}
-	
 
-	// 捐婧
+
+    /*
+    关闭数据库连接
+     */
 	public void close(Statement stmt) throws Exception {
 		try {
 			stmt.close();
@@ -128,8 +141,10 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 	}
-	
-	// 捐婧
+
+    /*
+    关闭数据库连接
+     */
 	public void close() throws SQLException, Exception{
 		if(null!=conn){
 			conn.close();

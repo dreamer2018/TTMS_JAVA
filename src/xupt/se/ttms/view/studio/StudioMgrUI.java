@@ -153,7 +153,7 @@ public class StudioMgrUI extends MainUITmpl {
 
 		btnAdd = new JButton("添加");
 		btnAdd.setBounds(rect.width - 220, rect.height - 45, 60, 30);
-		btnAdd.addActionListener(new ActionListener() {
+		btnAdd.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent Event) {
 				btnAddClicked();
 			}

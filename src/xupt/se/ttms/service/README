@@ -1,0 +1,4 @@
+service 业务逻辑层
+LoginedUser 已登陆用户的相关信息，继承于User
+SellTicketHandler 用户演出厅服务
+

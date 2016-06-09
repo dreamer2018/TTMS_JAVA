@@ -5,5 +5,4 @@ public class DAOFactory {
 	public static iStudioDAO creatStudioDAO(){
 		return new StudioDAO();
 	}
-	
 }

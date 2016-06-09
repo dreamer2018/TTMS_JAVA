@@ -6,7 +6,7 @@ public class Studio {
 	private String name="" ;
 	private int rowCount=0;
 	private int colCount=0;
-	private String introduction=""; //锟斤拷锟
+	private String introduction="";
 	
 	public void setID(int ID){
 		this.id=ID;

@@ -17,7 +17,6 @@ public class DateMatcher {
 
 		boolean match1 = p1.matcher(input).matches();
 
-
 		//判断是否匹配 YYYY-MM-DD YYYY-M-D YYYY-MM-D YYYY-M-DD 以及闰年
 		Pattern p2 = Pattern.compile("^(?:([0-9]{4}-(?:(?:0?[1,3-9]|1[0-2])-(?:29|30)|"
 				+ "((?:0?[13578]|1[02])-31)))|"
