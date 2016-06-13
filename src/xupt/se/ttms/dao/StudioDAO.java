@@ -14,7 +14,6 @@ import xupt.se.util.DBUtil;
     封装了对数据库的部分操作，插入演出厅信息，更新演出厅信息
  */
 public class StudioDAO implements iStudioDAO {
-
     /*
         往数据库中插入信息演出厅信息
      */
